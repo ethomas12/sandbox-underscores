@@ -24,12 +24,10 @@ function tinfoilcat_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'tinfoilcat_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1600,
+		'height'                 => 420,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'tinfoilcat_header_style',
-		// 'admin-head-callback'		 => 'tinfoilcat_admin_header_style',
-		// 'admin-preview-callback' => 'tinfoilcat_admin_header_image',
 	) ) );
 }
 add_action( 'after_setup_theme', 'tinfoilcat_custom_header_setup' );
