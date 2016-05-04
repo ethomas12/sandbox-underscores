@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+( function($) {
 	var container, button, menu, links, subMenus, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -96,7 +96,7 @@
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
-	
+
 	initMainNavigation( $( '.main-navigation' ) );
 
 	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
