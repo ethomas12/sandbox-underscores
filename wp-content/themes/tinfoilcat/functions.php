@@ -117,7 +117,9 @@ function tinfoilcat_scripts() {
 	wp_enqueue_style( 'tinfoilcat-style', get_stylesheet_uri() );
 
 	//Add Google fonts Montserrat and Source Sans pro
-	wp_enqueue_style('tinfoilcat-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,400italic,700,700italic');
+	// wp_enqueue_style('tinfoilcat-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,400italic,700,700italic');
+
+	wp_enqueue_style('tinfoilcat-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
 
 	wp_enqueue_script( 'tinfoilcat-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
