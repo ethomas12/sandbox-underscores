@@ -535,7 +535,7 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	width: 100%;
+	/*width: 100%;*/   /* removed this for now, it makes the nav spread over the whole screen */
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-weight: 300;
 	font-size: 1em;
