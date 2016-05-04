@@ -121,6 +121,7 @@ function tinfoilcat_scripts() {
 
 	wp_enqueue_style('tinfoilcat-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
 
+wp_enqueue_style('tinfoilcat-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css');
 	wp_enqueue_script( 'tinfoilcat-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
 	wp_localize_script( 'tinfoilcat-navigation', 'screenReaderText', array(

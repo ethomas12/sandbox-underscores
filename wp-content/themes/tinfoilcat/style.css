@@ -539,6 +539,7 @@ a:active {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-weight: 300;
 	font-size: 1em;
+	margin-top: 3em;
 }
 
 .main-navigation ul {
@@ -548,12 +549,7 @@ a:active {
 	padding-left: 0;
 }
 
-/*.site-footer .main-navigation {
-	margin-bottom: 1.75em;
-}*/
-
 .main-navigation li {
-	/*border-top: 1px solid #d1d1d1;  this makes lines between the menu items*/
 	position: relative;
 }
 
@@ -620,51 +616,64 @@ a:active {
 }
 
 .dropdown-toggle {
-	background-color: transparent;
-	border: 0;
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 12px;
+	right: 6px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-	content: "";
-	height: 42px;
 	padding: 0;
-	position: absolute;
-	text-transform: lowercase; /* Stop screen readers to read the text as capital letters */
-	top: 3px;
-	right: 0;
-	width: 42px;
+	font-family: 'FontAwesome';
+	background-color: #000;
+	border: 1px solid #fff;
+	content: "";
+	color: #fff;
+	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
 }
 
 .dropdown-toggle:after {
-	color: #333;
-	content: "\f431";
-	font-size: 24px;
-	line-height: 42px;
+	content: "\f078"; /*font awesome chevron down*/
+	font-size: 14px;
+	line-height: 27px;
 	position: relative;
 	top: 0;
 	left: 1px;
-	width: 42px;
+	width: 27px;
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	background-color: #eaeaea;
-	background-color: rgba(51, 51, 51, 0.1);
-}
-
-.dropdown-toggle:focus {
-	outline: 1px solid #c1c1c1;
-	outline: 1px solid rgba(51, 51, 51, 0.3);
+	background-color: #ffffff;
+	background-color: #000000;
 }
 
 .dropdown-toggle.toggle-on:after {
-	content: "\f432";
+	content: "\f077";  /*font awesome chevron up*/
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.menu-toggle {
+	position: fixed;
+	z-index: 100;
+	bottom: 1em;
+	left: 1em;
+	font-size: 1em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	border: solid 2px #fff;
+	transition: all ease-out 400ms;
+}
+
+.menu-toggle.hide {
+	bottom: -2.5em;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -878,7 +887,7 @@ a:active {
 }
 
 .site-description {
-	/*margin: 2em 2em 3em;*/
+	margin: 2em 2em 3em;
 	font-size: 110%;
 	color: #ffffff;
 /*}*
