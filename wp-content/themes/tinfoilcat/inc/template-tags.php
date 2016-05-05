@@ -34,19 +34,23 @@ function tinfoilcat_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	//Display the author avatar if the author has a Gravatar
-	$author_id = get_the_author_meta ( 'ID' );
-	if ( tinfoilcat_validate_gravatar ( $author_id )){
-				echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
-	}
+	// Display the author avatar if the author has a Gravatar
+		$author_id = get_the_author_meta( 'ID' );
+		echo get_avatar( $author_id );
+		if ( tinfoilcat_validate_gravatar( $author_id ) ) {
+			echo '<div class="meta-content has-avatar">';
+			echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
+		} else {
+			echo '<div class="meta-content">';
+		}
 
-	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-	if (  ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
-	}
+		echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'tinfoilcat' ), esc_html__( '1 Comment', 'tinfoilcat' ), esc_html__( '% Comments', 'tinfoilcat' ) );
+			echo '</span>';
+		}
+		echo '</div><!-- .meta-content -->';
 }
 endif;
 
@@ -70,14 +74,7 @@ function tinfoilcat_entry_footer() {
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
-	}
-
-	edit_post_link(
+		edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
 			esc_html__( 'Edit %s', 'tinfoilcat' ),

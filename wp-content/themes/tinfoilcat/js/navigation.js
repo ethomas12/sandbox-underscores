@@ -1,11 +1,11 @@
 /**
- * File navigation.js.
+ * navigation.js
  *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
+ * Handles toggling the navigation menu for small screens and enables tab
+ * support for dropdown menus.
  */
-( function($) {
-	var container, button, menu, links, subMenus, i, len;
+( function( $ ) {
+	var container, button, menu, links, subMenus;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -47,7 +47,7 @@
 	subMenus = menu.getElementsByTagName( 'ul' );
 
 	// Set menu items with submenus to aria-haspopup="true".
-	for ( i = 0, len = subMenus.length; i < len; i++ ) {
+	for ( var i = 0, len = subMenus.length; i < len; i++ ) {
 		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 	}
 
@@ -96,7 +96,6 @@
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
-
 	initMainNavigation( $( '.main-navigation' ) );
 
 	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
@@ -134,4 +133,5 @@
 		}
 		position = $(this).scrollTop();
 	});
+
 } )( jQuery );

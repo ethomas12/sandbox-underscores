@@ -36,7 +36,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Header
 # Widgets
 # Content
-	## Posts and pages
+	## Global
+    ## Posts and pages
 	## Asides
 	## Comments
 # Infinite scroll
@@ -273,7 +274,7 @@ input,
 select,
 textarea {
 	color: #000;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Source Sans Pro', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -282,7 +283,6 @@ textarea {
 .site-content {
 	font-size: 1.125em;
 	line-height: 1.6em;
-	padding: 3em;
 }
 
 h1,
@@ -291,19 +291,20 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	clear: both;
 	line-height: 1.3em;
 	margin-top: 2.5rem;
 	margin-bottom: 1rem;
 }
 
-h1 {font-size: 2.4em;}
-h2 {font-size: 2.2em;}
-h3 {font-size: 2em;}
-h4 {font-size: 1.8em;}
-h5 {font-size: 1.6em;}
-h6 {font-size: 1.4em;}
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.4em; }
+
 
 p {
 	margin-bottom: 1.5em;
@@ -446,7 +447,7 @@ input[type="submit"] {
 	border-radius: 0;
 	background: #fff;
 	color: #000;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -541,11 +542,10 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	/*width: 100%;*/   /* removed this for now, it makes the nav spread over the whole screen */
-	font-family: Montserrat, sans-serif;
+	width: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 	font-size: 1em;
-	margin-top: 3em; /* I added this in to move menu below logo */
 }
 
 .main-navigation ul {
@@ -599,12 +599,11 @@ a:active {
 }
 
 .main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a
+.main-navigation .current-menu-ancestor > a,
 .main-navigation .current_page_item > a,
 .main-navigation .current_page_ancestor > a {
-		font-weight: 700;
+	font-weight: 700;
 }
-
 
 .main-navigation .nav-menu > ul > li:first-child,
 .main-navigation .nav-menu > li:first-child {
@@ -639,7 +638,7 @@ a:active {
 }
 
 .dropdown-toggle:after {
-	content: "\f078"; /*font awesome chevron down*/
+	content: "\f078";
 	font-size: 14px;
 	line-height: 27px;
 	position: relative;
@@ -650,12 +649,12 @@ a:active {
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	background-color: #ffffff;
-	background-color: #000000;
+	background-color: #fff;
+	color: #000;
 }
 
 .dropdown-toggle.toggle-on:after {
-	content: "\f077";  /*font awesome chevron up*/
+	content: "\f077";
 }
 
 /* Small menu. */
@@ -686,6 +685,7 @@ a:active {
 .toggled .menu-toggle.hide {
 	bottom: 1em;
 }
+
 
 .menu-toggle:hover,
 .menu-toggle:focus {
@@ -729,7 +729,6 @@ a:active {
 .main-navigation.toggled ul ul.toggled-on > ul {
 	display: block;
 }
-
 
 /* Horizontal menu on wide screens */
 @media screen and (min-width: 50em) {
@@ -833,6 +832,8 @@ a:active {
 	}
 
 }
+
+
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -948,7 +949,7 @@ a:active {
 # Header
 --------------------------------------------------------------*/
 .site-header {
-	background-color: #000000;
+	background-color: #000;
 	background-size: cover;
 }
 
@@ -982,7 +983,7 @@ a:active {
 }
 
 .site-firstletter {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1.5em;
 	font-weight: 700;
 	text-align: center;
@@ -1005,12 +1006,12 @@ a:active {
 	font-size: 2.4em;
 	font-weight: bold;
 	line-height: 1.3em;
-	color: #ffffff;
+	color: #fff;
 	text-transform: uppercase;
 	word-break: break-word;
 }
 
-@media screen and (max-width:30em) {
+@media screen and (max-width: 30em) {
 	.site-title {
 		font-size: 2em;
 	}
@@ -1018,7 +1019,7 @@ a:active {
 
 .site-title a {
 	text-decoration: none;
-	color:inherit;
+	color: inherit;
 }
 
 .site-title a:hover,
@@ -1031,15 +1032,15 @@ a:active {
 	content: "";
 	margin: .7em auto 0;
 	width: 3em;
-	border-bottom: solid 1px #ffffff;
+	border-bottom: solid 1px #fff;
 	opacity: .5;
 }
 
 .site-description {
 	margin: 2em 2em 3em;
 	font-size: 110%;
-	color: #ffffff;
-/*}*
+	color: #fff;
+}
 
 /*--------------------------------------------------------------
 # Widgets
@@ -1059,6 +1060,11 @@ a:active {
 /*--------------------------------------------------------------
 ## Global
 --------------------------------------------------------------*/
+
+.content-area {
+	overflow-x: hidden;
+}
+
 .site-main {
 	margin: 1.4em;
 	font-size: .8em;
@@ -1070,13 +1076,14 @@ a:active {
 		margin: 1.8em;
 	}
 }
-@media screen and (min-width: 40em){
+
+@media screen and (min-width: 40em) {
 	.site-main {
 		font-size: 1em;
 	}
 }
 
-@media screen and (min-width: 57em){
+@media screen and (min-width: 57em) {
 	.site-main {
 		max-width: 45em;
 		margin: 1.8em auto;
@@ -1094,7 +1101,85 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.deck {
+	margin-bottom: 2.5em;
+}
+
+.deck p {
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	font-weight: 600;
+}
+
+/* Post Meta */
+.entry-meta {
+	margin: 0 -1.473684210526316em;
+	padding: 2em 1.473684210526316em;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+	background: #eee;
+}
+
+
+@media screen and (min-width: 30em) {
+	.entry-meta {
+		margin: 0 -1.894736842105263em;
+	}
+}
+
+@media screen and (min-width: 57em) {
+	.entry-meta {
+		position: relative;
+		width: 100%;
+		width: 100vw;
+		left: 0;
+		left: calc((-100vw + 52.2em) / 2);
+		overflow: hidden;
+	}
+}
+
+.author-avatar {
+	height: 50px;
+	width: 50px;
+	margin: 0 auto 1em;
+}
+
+.author-avatar img {
+	border-radius: 50%;
+}
+
+@media screen and (min-width: 50em) {
+
+	.has-avatar {
+		display: inline-block;
+		text-align: left;
+		width: 20em;
+	}
+
+	.author-avatar {
+		height: 70px;
+		width: 70px;
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 0;
+	}
+
+}
+
 .byline,
+.posted-on,
+.entry-meta .comments-link {
+	display: block;
+	padding:  0;
+}
+
+.entry-meta a {
+	font-weight: 700;
+}
+
 .updated:not(.published) {
 	display: none;
 }
