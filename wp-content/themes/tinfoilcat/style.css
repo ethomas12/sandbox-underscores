@@ -20,6 +20,28 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+/*
+Theme Name: Popperscores
+Theme URI: http://lynda.com/
+Author: Morten Rand-Hendriksen
+Author URI: http://lynda.com/mor10
+Description: A new awesome theme to showcase awesome content.
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: popperscores
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Popperscores is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -263,7 +285,8 @@ table {
 
 td,
 th {
-	padding: 0;
+	border: 1px solid #999;
+	padding: 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -275,7 +298,7 @@ input,
 select,
 textarea {
 	color: #000;
-	font-family: 'Source Sans Pro', serif;
+	font-family: 'Merriweather', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -292,7 +315,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 	clear: both;
 	line-height: 1.3em;
 	margin-top: 2.5rem;
@@ -448,7 +471,7 @@ input[type="submit"] {
 	border-radius: 0;
 	background: #fff;
 	color: #000;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -515,17 +538,17 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #000;
 }
 
 a:visited {
-	color: purple;
+	color: #000;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #000;
 }
 
 a:focus {
@@ -544,7 +567,7 @@ a:active {
 	clear: both;
 	display: block;
 	width: 100%;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 	font-weight: 300;
 	font-size: 1em;
 }
@@ -984,7 +1007,7 @@ a:active {
 }
 
 .site-firstletter {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 	font-size: 1.5em;
 	font-weight: 700;
 	text-align: center;
@@ -1003,7 +1026,7 @@ a:active {
 
 .site-title {
 	margin: 1.7em 1em 0;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 	font-size: 2.4em;
 	font-weight: bold;
 	line-height: 1.3em;
@@ -1066,6 +1089,7 @@ a:active {
 	overflow-x: hidden;
 }
 
+
 .site-main {
 	margin: 1.4em;
 	font-size: .8em;
@@ -1094,13 +1118,77 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+
+.entry-content a,
+.entry-content a,
+.entry-summary a,
+.entry-summary a {
+	text-decoration: none;
+	border-bottom: 2px solid #c3c3c3;
+}
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus {
+	border-bottom: 3px solid #c3c3c3;
+	box-shadow: inset 0 -3px 0 #c3c3c3;
+}
+
+.entry-meta a,
+.entry-footer a {
+	text-decoration: none;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus,
+.entry-footer a:hover,
+.entry-footer a:focus {
+	border-bottom: 2px solid #000;
+}
+
 .sticky {
 	display: block;
 }
 
 .hentry {
 	margin: 0 0 1.5em;
+	padding-bottom: 2em;
 }
+
+.single .hentry,
+.page .hentry {
+	padding-bottom: 0;
+}
+
+.entry-title {
+	margin-top: 2em;
+	margin-bottom: 1em;
+	font-size: 2em;
+	line-height: 1.3em;
+	text-align: center;
+	color: #000;
+	word-wrap: break-word; /* Catch and wrap very long words on small screens */
+}
+
+@media screen and (min-width: 40em) {
+	.entry-title {
+		margin-top: 1.5em;
+		font-size: 2.8em;
+		line-height: 1.3em;
+	}
+}
+
+.entry-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+	text-decoration: underline;
+}
+
 
 .deck {
 	margin-bottom: 2.5em;
@@ -1117,13 +1205,12 @@ a:active {
 .entry-meta {
 	margin: 0 -1.473684210526316em;
 	padding: 2em 1.473684210526316em;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Fira Sans", sans-serif;
 	font-size: 95%;
 	font-style: italic;
 	text-align: center;
 	background: #eee;
 }
-
 
 @media screen and (min-width: 30em) {
 	.entry-meta {
@@ -1201,6 +1288,79 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.site-content li {
+	line-height: 1.6em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.site-content li > ul {
+	margin-bottom: -1em;
+}
+
+.site-content li:last-child {
+	margin-bottom: 0;
+}
+
+.deck,
+.entry-content {
+	margin: 1.5em 0 0;
+}
+
+@media screen and (min-width: 50em) {
+
+	.deck,
+	.entry-content {
+		padding: 0 3em;
+	}
+}
+
+.entry-footer::before,
+.entry-footer::after {
+	display: block;
+	content: "";
+	width: 7em;
+	border-bottom: 1px solid #c3c3c3;
+	margin: 2em auto;
+}
+
+.entry-footer::before {
+	width: 3.5em;
+}
+
+.entry-footer {
+	font-family: "Fira Sans", sans-serif;
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+	.entry-footer {
+		padding: 0 1.5em;
+	}
+}
+
+.entry-footer span {
+	margin: .5em 0;
+}
+
+.entry-footer span::after {
+	content: "|";
+	padding: 0 1em;
+}
+
+.entry-footer span:last-of-type::after {
+	content: "";
+	padding: 0;
+}
+
+.entry-footer span a {
+	font-weight: 700;
+	text-decoration: none;
+	color: #000;
+}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -1273,6 +1433,20 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Images
+--------------------------------------------------------------*/
+
+img.aligncenter {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+img.alignright,
+img.alignleft {
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
