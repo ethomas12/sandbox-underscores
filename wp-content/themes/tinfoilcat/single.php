@@ -23,13 +23,21 @@ get_header(); ?>
 			endif;
 			?>
 
-			<?php the_post_navigation(); ?>
+			<?php 
+			the_post_navigation( array(
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'popperscores' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'popperscores' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'popperscores' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'popperscores' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
+			) );
+			?>
 
 		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();  /* gets sidebar.php */
-get_footer();		/* gets footer.php */
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
