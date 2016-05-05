@@ -21,7 +21,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*
-Theme Name: Popperscores
+Theme Name: tinfoilcat
 Theme URI: http://lynda.com/
 Author: Morten Rand-Hendriksen
 Author URI: http://lynda.com/mor10
@@ -29,13 +29,13 @@ Description: A new awesome theme to showcase awesome content.
 Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: popperscores
+Text Domain: tinfoilcat
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Popperscores is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+tinfoilcat is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -298,7 +298,7 @@ input,
 select,
 textarea {
 	color: #000;
-	font-family: 'Merriweather', serif;
+	font-family: 'Source Sans Pro', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -315,7 +315,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	clear: both;
 	line-height: 1.3em;
 	margin-top: 2.5rem;
@@ -471,7 +471,7 @@ input[type="submit"] {
 	border-radius: 0;
 	background: #fff;
 	color: #000;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -567,7 +567,7 @@ a:active {
 	clear: both;
 	display: block;
 	width: 100%;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 	font-size: 1em;
 }
@@ -1007,7 +1007,7 @@ a:active {
 }
 
 .site-firstletter {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1.5em;
 	font-weight: 700;
 	text-align: center;
@@ -1026,7 +1026,7 @@ a:active {
 
 .site-title {
 	margin: 1.7em 1em 0;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 2.4em;
 	font-weight: bold;
 	line-height: 1.3em;
@@ -1205,7 +1205,7 @@ a:active {
 .entry-meta {
 	margin: 0 -1.473684210526316em;
 	padding: 2em 1.473684210526316em;
-	font-family: "Fira Sans", sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 95%;
 	font-style: italic;
 	text-align: center;
@@ -1329,7 +1329,7 @@ a:active {
 }
 
 .entry-footer {
-	font-family: "Fira Sans", sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 95%;
 	font-style: italic;
 	text-align: center;
