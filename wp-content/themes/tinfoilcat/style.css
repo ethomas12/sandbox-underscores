@@ -896,6 +896,7 @@ a:active {
 /*--------------------------------------------------------------
 # Other Navigation
 --------------------------------------------------------------*/
+.comment-navigation,
 .post-navigation {
 	padding: 2em 0;
 	font-family: "Source Sans Pro", sans-serif;
@@ -904,6 +905,7 @@ a:active {
 }
 
 @media screen and (min-width: 50em) {
+	.comment-navigation,
 	.post-navigation {
 		padding: 2em 3em;
 	}
@@ -915,6 +917,7 @@ a:active {
 	padding: 0 .4em;
 }
 
+.comment-navigation,
 .post-navigation a {
 	display: block;
 	width: 100%;
@@ -923,6 +926,8 @@ a:active {
 	border: 1px solid #c3c3c3;
 }
 
+.comment-navigation a:hover,
+.comment-navigation a:focus,
 .post-navigation a:hover,
 .post-navigation a:focus {
 	border-color: #000;
@@ -951,6 +956,7 @@ a:active {
 		padding: 0;
 	}
 
+	.comment-navigation .nav-previous,
 	.post-navigation .nav-previous {
 		display: flex;
 		align-items: stretch;
@@ -962,6 +968,7 @@ a:active {
 		padding-bottom: 0;
 	}
 
+	.comment-navigation .nav-next,
 	.post-navigation .nav-next {
 		display: flex;
 		align-items: stretch;
@@ -1710,19 +1717,6 @@ a:active {
 	font-style: italic;
 	padding-bottom: .4em;
 }
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -1836,7 +1830,8 @@ img.alignleft {
 	margin-bottom: 1.5em;
 }
 
-.centered-image {
+.centered-image,
+.featured-image {
 	max-width: calc(100% + 2.8em);
 	margin: 1.5em -1.4em;
 }
@@ -1876,6 +1871,28 @@ img.alignleft {
 	img.alignleft {
 		margin-left: -3em;
 	}
+}
+
+.featured-image {
+	margin-top: -1.4em;
+	margin-bottom: -1.2em;
+}
+
+@media screen and (min-width: 30em) {
+	.featured-image {
+		margin-top: -1.8em;
+	}
+}
+
+@media screen and (min-width: 50em) {
+	.featured-image {
+		margin-top: 3em;
+	}
+}
+
+.featured-image img {
+	display: block;
+	margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
