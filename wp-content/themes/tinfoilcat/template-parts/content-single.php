@@ -16,7 +16,6 @@
 		if (has_post_thumbnail() ) {?>
 		<figure class="featured-image">
 		<?php the_post_thumbnail(); ?>  <!-- change the default thumbnail sizes here -->
-		
 
 		</figure>
 		<?php }

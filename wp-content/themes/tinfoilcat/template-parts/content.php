@@ -11,35 +11,31 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+		<?php the_title( sprintf( '<h2 class="entry-title index-excerpt"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php tinfoilcat_posted_on(); ?>
+		<?php if ( 'post' === get_post_type() ) : ?>
+		<div class="index-entry-meta">
+			<?php tinfoilcat_index_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content index-excerpt">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tinfoilcat' ),
-				'after'  => '</div>',
-			) );
+		the_excerpt();
 		?>
 	</div><!-- .entry-content -->
+
+	<div class="continue-reading">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<?php
+			printf(
+
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			);
+			?>
+	</div>
 
 	<footer class="entry-footer">
 		<?php tinfoilcat_entry_footer(); ?>
