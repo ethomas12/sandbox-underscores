@@ -210,6 +210,7 @@ function tinfoilcat_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'tinfoilcat_excerpt_more' );
 
+
 if ( ! function_exists( 'tinfoilcat_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
@@ -220,7 +221,7 @@ if ( ! function_exists( 'tinfoilcat_paging_nav' ) ) :
  * @global WP_Rewrite $wp_rewrite WordPress Rewrite object.
  */
 function tinfoilcat_paging_nav() {
-	global $wp_query, $wp_rewrite;
+  global $wp_query, $wp_rewrite;
 	// Don't print empty markup if there's only one page.
 	if ( $wp_query->max_num_pages < 2 ) {
 		return;
