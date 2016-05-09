@@ -11,6 +11,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+
+		<?php
+		if (has_post_thumbnail() ) {?>
+		<figure class="featured-image">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+				<?php the_post_thumbnail(); ?>  <!-- change the default thumbnail sizes here -->
+			</a>
+		</figure>
+		<?php }
+		?>
+
 		<?php the_title( sprintf( '<h2 class="entry-title index-excerpt"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -31,13 +42,10 @@
 			<?php
 			printf(
 
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s', 'tinfoilcat' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			);
 			?>
 	</div>
 
-	<footer class="entry-footer">
-		<?php tinfoilcat_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
