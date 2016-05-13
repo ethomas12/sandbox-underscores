@@ -15,11 +15,10 @@
 		<?php
 		if ( has_post_thumbnail() ) { ?>
 			<figure class="featured-image">
-				<?php } else {
-					the_post_thumbnail(); ?>
+				<?php the_post_thumbnail(); ?>
 			</figure>
-		<?php }
-		?>
+				<?php }
+				?>
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
